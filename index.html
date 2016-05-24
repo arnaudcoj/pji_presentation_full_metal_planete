@@ -7,7 +7,7 @@
 		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/moon.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -24,8 +24,81 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+          <h1>Full Métal Planète</h1>
+          <h3>Adaptation PC du jeu de Société</h3>
+          <p>Présenté par Tristan Camus et Arnaud Cojez</p>
+        </section>
+
+				<section>
+          Projet Individuel - 101
+          <img src="img/manettes.png"/>
+        </section>
+
+        <section>
+          Full Métal Planète
+          <img src="img/plateaufmp.png"/>
+        </section>
+
+        <section>
+          Technologies
+          <div><img width="25%" src="img/CPlusPlus.jpg"/></div>
+          <div><img width="40%" src="img/sfml.png"/></div>
+        </section>
+
+        <section>
+          Sommaire
+        </section>
+
+        <section>
+          Organisation
+          <div><img width="40%" src="img/organisation.png"/></div>
+        </section>
+
+        <section>Plateau</section>
+
+        <section>
+          Boucle de jeu
+<pre><code>while (window.isOpen())
+{
+    //Handle events
+    sf::Event event;
+    while (window.pollEvent(event)) {
+        if (event.type == sf::Event::EventType::Closed)
+            window.close();
+    }
+
+    //Update scene
+    objects.uptdate();
+
+    //Render cycle
+    window.clear();
+    objects.draw();
+    window.display();
+}</code></pre>
+        </section>
+
+        <section>Cases</section>
+
+        <section>
+          Pions
+          <div><img width="40%" src="img/pion.jpeg"/></div>
+        </section>
+
+        <section>État du jeu</section>
+
+        <section>Marées</section>
+
+        <section>Déplacement</section>
+
+        <section>PathFinding</section>
+
+        <section>Caméra</section>
+
+        <section>Conclusion</section>
+
+        <section>Merci !</section>
+
 			</div>
 		</div>
 
