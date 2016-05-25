@@ -47,9 +47,8 @@ On peut donc en déduire les formules suivantes.
 Les cases qui sont en bordure du plateau ne sont pas praticables. On les appelles des demi-cases car on ne peut en voir que la moitié.
 Une case contiendra un booléen indiquant si c'est une demi-case ou non
 
-*Boucle de Jeu
-Une fois ça ok,
 /Tristan
+Boucle de Jeu
 
 *Cases
 TODO UML
@@ -57,15 +56,23 @@ Pour l'instant, le plateau n'est composé que d'un type de case.
 Seulement, le jeu de plateau en contient 5.
 TODO cases
 Certaines cases changent d'état en fonction des marées, les cases marais sont submérgées à marée haute, les cases récifs sont asséchées à marée basse
+YAML
 
 *Pions
 TODO UML
 Il existe 9 types d'unités, qui peuvent pratiquer différents types de cases.
 Par exemple, les Vedettes et Barge ne vont que sur la mer ou les cases submergées, alors que le tank ou le crabe ne peuvent se déplacer que sur Terre.
 
+/Tristan
+Affichage pion simple
+
 Pour faciliter la création de ces unités, on a doté la classe Piece de Components.
 Un Component permet de définir le comportement d'une classe tout en découplant le code.
 On a 3 types de Components, Les moteurs, containers et armes, qu'on va en quelque sorte brancher à une entité pour la spécialiser.
+
+
+prise en compte type de case
+ajout texture : AssetManager
 
 *Marées
 Comme on le disait plus tôt, l'intérêt des cases marées est de pouvoir modifier le terrain en fonction du tour.
@@ -82,6 +89,10 @@ Pour chaque case on va vérifier si les voisins sont praticables. Si c'est le ca
 Cet algorithme prendra en compte le nombre de points d'action disponibles,
 les demi-cases, les autres unités, le moteur de l'unité et le terrain.
 
+Input souris
+Déplacement
+Animator
+
 *PathFinding
 Une fois que l'on connait la case cible, on va rechercher le plus court chemin pour voir l'unité s'y déplacer.
 On utilise l'algorithme de Pathfinding appelé A Star ou A étoile.
@@ -89,6 +100,7 @@ Il est dérivé de l'algorithme de Dijkstra. Cet algorithme résoud bien le prob
 L'avantage de A Star est qu'on va utiliser une heuristique pour anticiper le chemin à prendre. On va se déplacer selon ce chemin, et si on rencontre un obstacle, on va parcourir en largeur les cases qui se trouvent autour.
 On réunit donc efficacité et plus court chemin.
 
+Déplacement Pathfinding
 *Caméra
 /Tristan
 
