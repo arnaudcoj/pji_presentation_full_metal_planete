@@ -127,9 +127,6 @@ PathFinding :
 - Chercher le plus court chemin pour un déplacement
 - Algorithme de Pathfinding appelé A Star ou A étoile
 
-- Dérivé de l'algorithme de Dijkstra :
-	- pas très efficace car il parcourt la grille en largeur.
-
 - A Star : utiliser une heuristique pour anticiper le chemin à prendre
 - Se déplacer selon ce chemin
 - Si obstacle : parcourir en largeur les cases autour
@@ -146,3 +143,5 @@ Conclusion :
 	- pratiques développement de jeux vidéo.
 - Gain d'expérience non négligeable pour travailler dans ce milieu
 - savons que nous sommes capables de travailler sur un tel projet
+- Moteur de jeu
+- La prochaine fois on fait les règles du coup !
