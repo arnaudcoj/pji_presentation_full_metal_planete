@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Full Métal Planète</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/moon.css">
@@ -37,33 +37,39 @@
         </section>
 
         <section>
-          Sommaire
+          <h3>Sommaire</h3>
+          <ol>
+            <li>Full Métal Planète</li>
+            <li>Technologies</li>
+            <li>Organisation</li>
+            <li>Fonctionnalités</li>
+            <li>Conclusion</li>
+          </ol>
         </section>
 
         <section>
-          <p>Full Métal Planète</p>
+          <h3>Full Métal Planète</h3>
           <img src="img/plateaufmp.png"/>
         </section>
 
         <section>
-          <p>Technologies</p>
+          <h3>Technologies</h3>
           <div><img width="25%" src="img/CPlusPlus.jpg"/></div>
           <div><img width="40%" src="img/sfml.png"/></div>
         </section>
 
         <section>
-          Organisation
+          <h3>Organisation</h3>
           <div><img width="40%" src="img/organisation.png"/></div>
         </section>
 
         <section>
-          Fonctionnalités
+          <h3>Fonctionnalités</h3>
         </section>
 
         <section>
           Classe principale
-          <div><img width="40%" src="img/uml.png"/></div>
-          UML Classe Principale
+          <div><img src="img/game.png"/></div>
         </section>
 
         <section>
@@ -73,20 +79,13 @@
 
         <section>
           Plateau
-          <div><img width="40%" src="img/uml.png"/></div>
-          UML Grid
+          <div><img width="40%" src="img/grid_neighbours.png"/></div>
+          <div><img width="40%" src="img/hexgrid_neighbours.png"/></div>
         </section>
 
         <section>
           Plateau
-          <div><img width="40%" src="img/uml.png"/></div>
-          Schéma Héxa - Tableau
-        </section>
-
-        <section>
-          Plateau
-          <div><img width="40%" src="img/uml.png"/></div>
-          Schéma Voisines
+          <div><img width="40%" src="img/hexgrid_direct.png"/></div>
         </section>
 
         <section>
@@ -117,14 +116,13 @@
 
         <section>
           Cases
-          <div><img width="40%" src="img/cases.jpeg"/></div>
-          Dessins Cases
-        </section>
-
-        <section>
-          Cases
-          <div><img width="40%" src="img/uml.png"/></div>
-          UML Cases
+          <div>
+            <img style="background:none; border:none" src="img/plain.png"/>
+            <img style="background:none; border:none" src="img/mountain.png"/>
+            <img style="background:none; border:none" src="img/sea.png"/>
+            <img style="background:none; border:none" src="img/reef_medium.png"/>
+            <img style="background:none; border:none" src="img/swamp_medium.png"/>
+          </div>
         </section>
 
         <section>
@@ -134,14 +132,12 @@
 
         <section>
           Pions
-          <div><img width="40%" src="img/uml.png"/></div>
-          Dessins Pions
+          <div><img width="40%" src="img/pions.jpg"/></div>
         </section>
 
         <section>
           Pions
-          <div><img width="40%" src="img/uml.png"/></div>
-          UML Pions
+          <div><img src="img/pieces.png"/></div>
         </section>
 
         <section>
@@ -151,14 +147,12 @@
 
         <section>
           Tours et Marées
-          <div><img width="40%" src="img/uml.png"/></div>
-          UML Marées
+          <div><img src="img/gamestate.png"/></div>
         </section>
 
         <section>
           Tours et Marées
-          <div><img width="40%" src="img/uml.png"/></div>
-          Tableau Marées
+          <div><img src="img/tides.png"/></div>
         </section>
 
         <section>
@@ -242,7 +236,7 @@
           <div><img width="50%" style="background-color: white" src="img/zoom.gif"/></div>
         </section>
 
-        <section>Conclusion</section>
+        <section><h3>Conclusion</h3></section>
 
         <section>
           <p>Merci de votre attention !</p>
@@ -259,6 +253,8 @@
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
+        slideNumber: true,
+        controls:false,
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
