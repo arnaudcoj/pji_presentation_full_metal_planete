@@ -1,112 +1,148 @@
-on présente projet
-Adaptation jeu de société full métal planète sur pc
+Pourquoi :
+- Tous les 2 passionnés de jeux vidéo
+- On veut passer du côté de la création
+- Pensé à créer un jeu vidéo de A à Z
+- Projet Individuel qui nous a offert la possibilité
+de choisir notre sujet
+- Jeu de stratégie au tour par tour
+- Julien nous a proposer d'adapter le jeu Full Métal Planète
+- Concentrer sur le côté technique
 
-*pourquoi
-tous les 2 passionnés de jeux vidéo
-à tel point qu'on veut passer du côté de la création
-Ce semestre était l'occasion d'en apprendre plus sur les domaines informatiques abordés dans le JV
-c-à-d modélisation 3D, algorithmique etc, mais surtout le Projet Individuel qui nous a offert la possibilité
-de choisir notre sujet.
+Sommaire
 
-Nous avons donc directement pensé à créer un jeu vidéo from scratch. Bien sûr il serait simple et incomplet, mais le but était d'engranger le plus de connaissances possibles, ce qui a été le cas.
-Nous sommes donc partis sur l'idée d'un jeu de stratégie au tour par tour, type tactical rpg
-Nous avons fait part de cette idée à Julien et il nous a parlé d'un jeu de société de ce type, Full Métal Planète, qu'il serait intéressant d'adapter.
+Full Métal Planète
+- Jeu de stratégie sorti en 1988 et édité par Ludodélire.
+- Le jeu se déroule en 25 tours et le principe est de ramasser un maximum de minerai
+- Évacuer la planète
+- On peut se déplacer sur la carte en fonction des unités et des cases de terrain, transporter du minerai et des unités, attaquer et s'emparer d'unités ennemies.
+- La carte changera de configuration en fonction des marées (basses, moyennes, hautes), qui changent à chaque tour.
 
-Nous avons trouvé que c'était une bonne idée car nous pourrions nous concentrer sur le côté technique
+Technologies :
+- Le C++ 
+- Langages les plus utilisés dans le domaine des jeux vidéo
+- Occasion renforcer nos connaissances dans l'utilisation de ce langage
+- L'utiliser dans le cadre de la création d'un jeu vidéo
+- SFML, Simple and Fast Multimedia Library
+- Permet de gérer et d'utiliser des ressources multimédia : images, le son etc...
 
-*Full Métal Planète
-Jeu de stratégie sorti en 1988 et édité par Ludodélire.
-Le jeu se déroule en 25 tours et le principe est de ramasser un maximum de minerai, disséminés sur le plateau au début du jeu, et d'évacuer la planète avant la fin de la partie.
-La carte changera de configuration en fonction des marées (basses, moyennes, hautes), qui changent à chaque tour.
-On peut se déplacer sur la carte en fonction des unités et des cases de terrain, transporter du minerai et des unités, attaquer et s'emparer d'unités ennemies.
+Organisation : 
+- Réunion avec Julien
+- 2 parties
+	-> API : données et logiques du jeu
+	-> Interface : affichage du jeu
+- Dans un premier temps nous avons travaillé sur 
+- Au début : API tous les 2
+- Arnaud -> API
+- Tristan -> Interface
+- Mise en place de nombreux test unitaires
 
-*Technologies
-Le C++ est un des langages les plus utilisés dans le domaine des jeux vidéo, donc c'était l'occasion ou jamais de renforcer nos connaissances dans l'utilisation de ce langage
-On a choisi la bibliothèque SFML, Simple and Fast Multimedia Library, qui nous permet de gérer simplement et efficacement la chargement et l'affichage des images, le son etc. Cette bibliothèque s'apparente à la SDL, mais est orientée objet et principalement destinée à la création de jeu vidéo
+Fonctionnalités
 
-*Sommaire
+Classe principale :
+- Classe Game : permet de récupérer une liste de joueurs et le joueur courant, le plateau, l'état de jeu, mais aussi d'agir sur ce dernier, en changeant le tour, les marées etc.
 
-*Organisation
-Le projet se découpe naturellement en 2 parties. La partie API, qui correspond au côté données et logiques du jeu, et la partie interface, qui elle correspond à l'affichage du jeu et à l'interaction entre le joueur et le jeu
-Dans un premier temps nous avons travaillé sur l'API tous les 2, puis dès que possible, nous avons divisé le travail. Arnaud s'occupait de l'API et Tristan de l'interface.
-Pour le développement de l'API, des tests unitaires ont été mis en place afin de pouvoir avancer et corriger les problèmes éventuels sans avoir à les intégrer avec l'interface à chaque fois. Pour l'instant nous sommes à un total de TODO tests.
+Plateau : 
+- Premières étapes : représenter la grille de cases hexagonales
+- Grille hexagonale -> une succession de lignes dans lesquelles on alterne le voisin bas droit et haut droit.
+- Représenter par un tableau 2D
+- Définir voisines d'une case donnée
+- 2 cas : x pair = rouge, x impair = bleu
+- Déduire formules.
 
-*Fonctionnalités
+- cases en bordure -> pas praticables - >demi-cases
+- booléen
 
-*Classe principale
-Nous avons une classe appelée Game qui nous permet de récupérer une liste de joueurs et le joueur courant, le plateau, l'état de jeu, mais aussi d'agir sur ce dernier, en changeant le tour, les marées etc.
+Tristan : Représentation graphique grille
 
-*Plateau
-Une des premières étapes a été de représenter la grille de cases hexagonales de façon informatisée.
-Si on regarde une grille hexagonale, on s'aperçoit qu'on peut la représenter avec une succession de lignes dans lesquelles on alterne le voisin bas droit et haut droit.
-On peut donc facilement convertir cette grille en un tableau, structure native en C++
-Reste à définir quelles sont les voisines d'une case donnée.
-On distingue 2 cas particuliers, x pair = rouge, x impair = bleu
-On peut donc en déduire les formules suivantes.
-
-Les cases qui sont en bordure du plateau ne sont pas praticables. On les appelles des demi-cases car on ne peut en voir que la moitié.
-Une case contiendra un booléen indiquant si c'est une demi-case ou non
-
-/Tristan
 Boucle de Jeu
 
-*Cases
-TODO UML
-Pour l'instant, le plateau n'est composé que d'un type de case.
-Seulement, le jeu de plateau en contient 5.
-TODO cases
-Certaines cases changent d'état en fonction des marées, les cases marais sont submérgées à marée haute, les cases récifs sont asséchées à marée basse
-YAML
-
-*Pions
-TODO UML
-Il existe 9 types d'unités, qui peuvent pratiquer différents types de cases.
-Par exemple, les Vedettes et Barge ne vont que sur la mer ou les cases submergées, alors que le tank ou le crabe ne peuvent se déplacer que sur Terre.
-
-/Tristan
-Affichage pion simple
-
-Pour faciliter la création de ces unités, on a doté la classe Piece de Components.
-Un Component permet de définir le comportement d'une classe tout en découplant le code.
-On a 3 types de Components, Les moteurs, containers et armes, qu'on va en quelque sorte brancher à une entité pour la spécialiser.
+Cases :
+- Plateau composé que d'un type de case
+- Le jeu en contient 5.
+- Certaines cases changent d'état en fonction des marées
+- Cases marais -> submérgées à marée haute
+- Cases récifs -> asséchées à marée basse
 
 
-prise en compte type de case
-ajout texture : AssetManager
+Tristan : Représentation graphique type de case
 
-*Marées
-Comme on le disait plus tôt, l'intérêt des cases marées est de pouvoir modifier le terrain en fonction du tour.
-Ces marées sont mises dans un tableau et mélangées, de façon à avoir un comportement aléatoire mais que l'on puisse prévoir les marées suivantes (grâce aux pondeuses météo)
-À chaque changement de tour on passe à la marée suivante et on va mettre à jour le plateau
-On a 3 type de marées : Basse, moyenne et haute.
-TODO tableau marées
 
-*Déplacement
-On peut donc déplacer les pions d'une case à une autre, en fonction des obstacles rencontrés et des points d'actions restants
-On aura donc une fonction qui cherche les cases praticables avec un algorithme de remplissage par diffusion
-TODO schéma ou carte
-Pour chaque case on va vérifier si les voisins sont praticables. Si c'est le cas on les ajoute dans la liste des cases accessibles, puis on réitère en décrémentant le nombre de point d'actions.
-Cet algorithme prendra en compte le nombre de points d'action disponibles,
-les demi-cases, les autres unités, le moteur de l'unité et le terrain.
+Pions :
+- 9 types d'unités
+- Peuvent pratiquer différents types de cases
+- Exemple : 
+	vedettes & barge -> mer ou cases submergées
+	tank & crabe -> terre ou cases assechées
 
-Input souris
-Déplacement
-Animator
 
-*PathFinding
-Une fois que l'on connait la case cible, on va rechercher le plus court chemin pour voir l'unité s'y déplacer.
-On utilise l'algorithme de Pathfinding appelé A Star ou A étoile.
-Il est dérivé de l'algorithme de Dijkstra. Cet algorithme résoud bien le problème du plus court chemin mais n'est pas très efficace car il parcoure la grille en largeur.
-L'avantage de A Star est qu'on va utiliser une heuristique pour anticiper le chemin à prendre. On va se déplacer selon ce chemin, et si on rencontre un obstacle, on va parcourir en largeur les cases qui se trouvent autour.
-On réunit donc efficacité et plus court chemin.
+Tristan : Représentation graphique pion
 
-Déplacement Pathfinding
-*Caméra
-/Tristan
 
-*Conclusion
-Ce projet nous a beaucoup appris, autant sur les technologies utilisées que sur les pratiques propres au développement de jeux vidéo.
-En plus nous gagnons de l'expérience ce qui n'est pas négligeable pour travailler dans ce milieu.
-Mais surtout nous avons gagné en confiance et savons que nous sommes capables de travailler sur un tel projet
+- Classe Piece & Components
+- Component : définir le comportement d'une classe tout en découplant le code.
+- 3 types de Components : 
+	- moteurs
+	- containers
+	- armes
+- brancher à une entité pour la spécialiser
 
-*MERCI
+
+Tours & Marées : 
+- cases marées -> modifier le terrain en fonction du tour
+- mises dans un tableau et mélangées, de façon à avoir un comportement aléatoire mais que l'on puisse prévoir les marées suivantes (grâce aux pondeuses météo)
+- changement de tour -> marée suivante & mettre à jour le plateau
+- 3 type de marées : Basse, moyenne et haute.
+
+
+Gestion des ressources
+
+Textures
+
+Contôle à la souris
+
+
+Déplacement : 
+- Déplacer les pions d'une case à une autre, en fonction des obstacles rencontrés et des points d'actions restants
+
+- fonction qui cherche les cases praticables avec un algorithme de remplissage par diffusion
+- Pour chaque case on va vérifier si les voisins sont praticables.
+- Si oui : ajoute dans la liste des cases accessibles
+- On réitère en décrémentant le nombre de point d'actions
+algorithme prend en compte : 
+	- le nombre de points d'action disponibles
+	- les demi-cases
+	- les autres unités
+	- le moteur de l'unité
+	- le terrain
+
+Tristan : Représentation graphique déplacement
+
+
+Animation
+
+Carte du jeu
+
+
+PathFinding :
+- Chercher le plus court chemin pour un déplacement
+- Algorithme de Pathfinding appelé A Star ou A étoile
+
+- Dérivé de l'algorithme de Dijkstra :
+	- pas très efficace car il parcourt la grille en largeur.
+
+- A Star : utiliser une heuristique pour anticiper le chemin à prendre
+- Se déplacer selon ce chemin
+- Si obstacle : parcourir en largeur les cases autour
+
+- efficacité et plus court chemin
+
+
+Caméra
+
+
+Conclusion :
+- beaucoup appris
+	- Technologies utilisées
+	- pratiques développement de jeux vidéo.
+- Gain d'expérience non négligeable pour travailler dans ce milieu
+- savons que nous sommes capables de travailler sur un tel projet
